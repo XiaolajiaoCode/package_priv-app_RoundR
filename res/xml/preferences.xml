@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:roundr="roundrprefs"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="圆角设置" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="enable"
+            android:title="是否开启圆角" />
+    </PreferenceCategory>
+</PreferenceScreen>
