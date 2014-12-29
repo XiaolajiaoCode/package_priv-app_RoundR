@@ -1,5 +1,4 @@
 package com.android.systemui.roundr;
-
 /**
  * Copyright 2013 Mohammad Adib
  * 
@@ -15,42 +14,36 @@ package com.android.systemui.roundr;
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.ProgressDialog;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.view.WindowManager.LayoutParams;
 
-public class MainActivity extends Activity {
-
-
-
+public class MainActivity extends Activity
+{
 	ProgressDialog progress;
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		if (!BootReceiver.boot_up || Corner.running) {
-			Intent i = new Intent(this, SettingsActivity.class);
+		if(!BootReceiver.boot_up || Corner.running)
+		{
+			Intent i = new Intent(this,SettingsActivity.class);
 			startActivity(i);
 		}
-		if (prefs.getBoolean("enable", true)) {
-			StandOutWindow.show(this, Corner.class, 0);
-			StandOutWindow.show(this, Corner.class, 1);
-			StandOutWindow.show(this, Corner.class, 2);
-			StandOutWindow.show(this, Corner.class, 3);
-			prefs.edit().putInt("flags", LayoutParams.FLAG_SHOW_WHEN_LOCKED 
-					| LayoutParams.FLAG_LAYOUT_IN_SCREEN).commit();
+		if(prefs.getBoolean("enable",true))
+		{
+			StandOutWindow.show(this,Corner.class,0);
+			StandOutWindow.show(this,Corner.class,1);
+			StandOutWindow.show(this,Corner.class,2);
+			StandOutWindow.show(this,Corner.class,3);
+			prefs.edit().putInt("flags",LayoutParams.FLAG_SHOW_WHEN_LOCKED | LayoutParams.FLAG_LAYOUT_IN_SCREEN).commit();
 		}
 		finish();
 	}
-	
-
 }

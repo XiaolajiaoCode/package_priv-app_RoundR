@@ -1,5 +1,4 @@
 package com.android.systemui.roundr;
-
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -10,17 +9,16 @@ import android.view.View;
  * @author Mark Wei <markwei@gmail.com>
  * 
  */
-public class StandOutFlags {
+public class StandOutFlags
+{
 	// This counter keeps track of which primary bit to set for each flag
 	private static int flag_bit = 0;
-
 	/**
 	 * Setting this flag indicates that the window wants the system provided
 	 * window decorations (titlebar, hide/close buttons, resize handle,
 	 * etc).
 	 */
 	public static final int FLAG_DECORATION_SYSTEM = 1 << flag_bit++;
-
 	/**
 	 * If {@link #FLAG_DECORATION_SYSTEM} is set, setting this flag
 	 * indicates that the window decorator should NOT provide a close
@@ -29,9 +27,7 @@ public class StandOutFlags {
 	 * <p>
 	 * This flag also sets {@link #FLAG_DECORATION_SYSTEM}.
 	 */
-	public static final int FLAG_DECORATION_CLOSE_DISABLE = FLAG_DECORATION_SYSTEM
-			| 1 << flag_bit++;
-
+	public static final int FLAG_DECORATION_CLOSE_DISABLE = FLAG_DECORATION_SYSTEM | 1 << flag_bit++;
 	/**
 	 * If {@link #FLAG_DECORATION_SYSTEM} is set, setting this flag
 	 * indicates that the window decorator should NOT provide a resize
@@ -40,9 +36,7 @@ public class StandOutFlags {
 	 * <p>
 	 * This flag also sets {@link #FLAG_DECORATION_SYSTEM}.
 	 */
-	public static final int FLAG_DECORATION_RESIZE_DISABLE = FLAG_DECORATION_SYSTEM
-			| 1 << flag_bit++;
-
+	public static final int FLAG_DECORATION_RESIZE_DISABLE = FLAG_DECORATION_SYSTEM | 1 << flag_bit++;
 	/**
 	 * If {@link #FLAG_DECORATION_SYSTEM} is set, setting this flag
 	 * indicates that the window decorator should NOT provide a resize
@@ -51,9 +45,7 @@ public class StandOutFlags {
 	 * <p>
 	 * This flag also sets {@link #FLAG_DECORATION_SYSTEM}.
 	 */
-	public static final int FLAG_DECORATION_MOVE_DISABLE = FLAG_DECORATION_SYSTEM
-			| 1 << flag_bit++;
-
+	public static final int FLAG_DECORATION_MOVE_DISABLE = FLAG_DECORATION_SYSTEM | 1 << flag_bit++;
 	/**
 	 * Setting this flag indicates that the window can be moved by dragging
 	 * the body.
@@ -63,7 +55,6 @@ public class StandOutFlags {
 	 * always be moved by dragging the titlebar.
 	 */
 	public static final int FLAG_BODY_MOVE_ENABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that windows are able to be hidden, that
 	 * {@link StandOutWindow#getHiddenIcon(int)},
@@ -73,7 +64,6 @@ public class StandOutFlags {
 	 * {@link #FLAG_DECORATION_SYSTEM} is set.
 	 */
 	public static final int FLAG_WINDOW_HIDE_ENABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the window should be brought to the
 	 * front upon user interaction.
@@ -84,7 +74,6 @@ public class StandOutFlags {
 	 * allows the system to bring the window to the front.
 	 */
 	public static final int FLAG_WINDOW_BRING_TO_FRONT_ON_TOUCH = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the window should be brought to the
 	 * front upon user tap.
@@ -95,7 +84,6 @@ public class StandOutFlags {
 	 * allows the system to bring the window to the front.
 	 */
 	public static final int FLAG_WINDOW_BRING_TO_FRONT_ON_TAP = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the system should keep the window's
 	 * position within the edges of the screen. If this flag is not set, the
@@ -110,7 +98,6 @@ public class StandOutFlags {
 	 * 
 	 */
 	public static final int FLAG_WINDOW_EDGE_LIMITS_ENABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the system should keep the window's
 	 * aspect ratio constant when resizing.
@@ -125,7 +112,6 @@ public class StandOutFlags {
 	 *      MotionEvent)
 	 */
 	public static final int FLAG_WINDOW_ASPECT_RATIO_ENABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the system should resize the window
 	 * when it detects a pinch-to-zoom gesture.
@@ -133,7 +119,6 @@ public class StandOutFlags {
 	 * @see Window#onInterceptTouchEvent(MotionEvent)
 	 */
 	public static final int FLAG_WINDOW_PINCH_RESIZE_ENABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the window does not need focus. If
 	 * this flag is set, the system will not take care of setting and
@@ -153,7 +138,6 @@ public class StandOutFlags {
 	 * 
 	 */
 	public static final int FLAG_WINDOW_FOCUSABLE_DISABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the system should not change the
 	 * window's visual state when focus is changed. If this flag is set, the
@@ -164,27 +148,24 @@ public class StandOutFlags {
 	 * 
 	 */
 	public static final int FLAG_WINDOW_FOCUS_INDICATOR_DISABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the system should disable all
 	 * compatibility workarounds. The default behavior is to run
-	 * {@link Window#fixCompatibility(View, int)} on the view
-	 * returned by the implementation.
+	 * {@link Window#fixCompatibility(View, int)} on the view returned by
+	 * the implementation.
 	 * 
 	 * @see {@link Window#fixCompatibility(View, int)}
 	 */
 	public static final int FLAG_FIX_COMPATIBILITY_ALL_DISABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the system should disable all
 	 * additional functionality. The default behavior is to run
-	 * {@link Window#addFunctionality(View, int)} on the view
-	 * returned by the implementation.
+	 * {@link Window#addFunctionality(View, int)} on the view returned by
+	 * the implementation.
 	 * 
 	 * @see {@link StandOutWindow#addFunctionality(View, int)}
 	 */
 	public static final int FLAG_ADD_FUNCTIONALITY_ALL_DISABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the system should disable adding the
 	 * resize handle additional functionality to a custom View R.id.corner.
@@ -196,7 +177,6 @@ public class StandOutFlags {
 	 * @see {@link Window#addFunctionality(View, int)}
 	 */
 	public static final int FLAG_ADD_FUNCTIONALITY_RESIZE_DISABLE = 1 << flag_bit++;
-
 	/**
 	 * Setting this flag indicates that the system should disable adding the
 	 * drop down menu additional functionality to a custom View

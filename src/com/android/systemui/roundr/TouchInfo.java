@@ -1,4 +1,5 @@
 package com.android.systemui.roundr;
+import android.annotation.SuppressLint;
 
 /**
  * This class holds temporal touch and gesture information. Mainly used to hold
@@ -7,23 +8,23 @@ package com.android.systemui.roundr;
  * @author Mark Wei <markwei@gmail.com>
  * 
  */
-public class TouchInfo {
+public class TouchInfo
+{
 	/**
 	 * The state of the window.
 	 */
-	public int firstX, firstY, lastX, lastY;
-	public double dist, scale, firstWidth, firstHeight;
+	public int firstX,firstY,lastX,lastY;
+	public double dist,scale,firstWidth,firstHeight;
 	public float ratio;
-
 	/**
 	 * Whether we're past the move threshold already.
 	 */
 	public boolean moving;
 
+	@SuppressLint("DefaultLocale")
 	@Override
-	public String toString() {
-		return String
-				.format("WindowTouchInfo { firstX=%d, firstY=%d,lastX=%d, lastY=%d, firstWidth=%d, firstHeight=%d }",
-						firstX, firstY, lastX, lastY, firstWidth, firstHeight);
+	public String toString()
+	{
+		return String.format("WindowTouchInfo { firstX=%d, firstY=%d,lastX=%d, lastY=%d, firstWidth=%d, firstHeight=%d }",firstX,firstY,lastX,lastY,firstWidth,firstHeight);
 	}
 }
